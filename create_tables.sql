@@ -20,15 +20,17 @@ CREATE TABLE Customer (
     firstName varchar(255) NOT Null,
     lastName varchar(255) Not Null,
   	address varchar(255) Not Null,
-  	companyName varchar(255),	--optional
-  	phone varchar(15) Not Null, -- needed for reservations
+  	phone varchar(15) Not Null,
+  	companyName varchar(255)
 );
+-- duration amount of days
 
 CREATE TABLE Reservation(
     reservationID int not Null PRIMARY KEY AUTO_INCREMENT,
-    customerID int not Null FOREIGN KEY,
+    customerID int not Null,
     startDate date Not Null,
-    duration int Not Null -- amount of days
+    duration int Not Null,
+    FOREIGN KEY (customerID) REFERENCES Customer(customerID)
 );
 
 
