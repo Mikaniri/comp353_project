@@ -3,15 +3,17 @@ CREATE TABLE Driver (
     driverID int not Null PRIMARY KEY AUTO_INCREMENT,
     firstName varchar(255) NOT Null,
     lastName varchar(255) Not Null,
-    licenceType varchar(20) NOT NULL CHECK (licenceType IN ('tourism', 'heavyweight', 'super heavyweight'))
+    licenseType varchar(20) NOT NULL CHECK (licenseType IN ('tourism', 'heavyweight', 'super heavyweight'))
 );
 -- Added plate field as well as I assume we need it
 -- Notice vehicle_type is same as license_type ? 
+-- Added brand as its in one of the querries
 CREATE TABLE Vehicle (
     vehicleID int Not Null PRIMARY KEY AUTO_INCREMENT,
     priceKM double Not Null,
   	priceDay double Not Null,
     plate varchar(7) Not Null,
+    brand varchar(255) Not Null,
     vehicleType varchar(20) NOT NULL CHECK (vehicleType IN ('tourism', 'heavyweight', 'super heavyweight'))
 );
 
