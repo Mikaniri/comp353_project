@@ -16,7 +16,7 @@ CREATE TABLE Vehicle (
     brand varchar(255) Not Null,
     vehicleType varchar(20) NOT NULL CHECK (vehicleType IN ('tourism', 'heavyweight', 'super heavyweight'))
 );
-
+-- if company name is NULL its an individual not a company
 CREATE TABLE Customer (
     customerID int not Null PRIMARY KEY AUTO_INCREMENT,
     firstName varchar(255) NOT Null,
