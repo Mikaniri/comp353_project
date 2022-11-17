@@ -6,7 +6,7 @@ CREATE TABLE Driver (
     licenseType varchar(20) NOT NULL CHECK (licenseType IN ('tourism', 'heavyweight', 'super heavyweight'))
 );
 -- Added plate field as well as I assume we need it
--- Notice vehicle_type is same as license_type ? 
+-- Notice vehicleType is same as licenseType ? 
 -- Added brand as its in one of the querries
 CREATE TABLE Vehicle (
     vehicleID int Not Null PRIMARY KEY AUTO_INCREMENT,
@@ -35,6 +35,26 @@ CREATE TABLE Reservation(
     FOREIGN KEY (customerID) REFERENCES Customer(customerID)
 );
 
+CREATE TABLE Mission(
+    missionID int not Null PRIMARY KEY AUTO_INCREMENT,
+    startDate date Not Null,
+    endDate date Not Null,
+    place varchar(255) Not Null,
+    driverID int not Null,
+    FOREIGN KEY (driverID) REFERENCES Driver(driverID),
+    vehicleID int not Null,
+    FOREIGN KEY (vehicleID) REFERENCES Vehicle(vehicleID),
+    reservationID int not Null,
+    FOREIGN KEY (reservationID) REFERENCES Reservation(reservationID)
+);
 
-
-
+CREATE TABLE Bill(
+    billID int not Null PRIMARY KEY AUTO_INCREMENT,
+    odometer int,
+    startDate date,
+    endDate date,
+    total double,
+    missionID int not Null,
+    FOREIGN KEY (missionID) REFERENCES Mission(missionID),
+    paymentType varchar(7) CHECK (paymentType IN ('credit', 'cash', 'check'))
+);
