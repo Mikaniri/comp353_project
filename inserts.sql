@@ -69,3 +69,77 @@ INSERT INTO Customer(firstName, lastName, address, phone, companyName)
 Values ("Milana", "Parisien", "23 Cote Saint Luc", "514 384 5932", "Uber"); -- Company
 
 -- SELECT * FROM Customer;
+
+INSERT INTO Reservation(customerID, startDate, duration)
+Values (1, '2008-7-04', 180);
+INSERT INTO Reservation(customerID, startDate, duration)
+Values (2, '2022-3-11', 30);
+INSERT INTO Reservation(customerID, startDate, duration)
+Values (3, '2022-3-14', 7);
+INSERT INTO Reservation(customerID, startDate, duration)
+Values (4, '2022-3-04', 25);
+INSERT INTO Reservation(customerID, startDate, duration)
+Values (5, '2022-3-18', 20);
+INSERT INTO Reservation(customerID, startDate, duration)
+Values (6, '2022-3-28', 30);
+INSERT INTO Reservation(customerID, startDate, duration)
+Values (7, '2022-2-1', 70);
+INSERT INTO Reservation(customerID, startDate, duration)
+Values (7, '2022-12-5', 60);
+INSERT INTO Reservation(customerID, startDate, duration)
+Values (1, '2022-2-5', 200);
+INSERT INTO Reservation(customerID, startDate, duration)
+Values (9, '2020-1-1', 365);
+
+-- SELECT * FROM Reservation;
+
+INSERT INTO Mission(startDate, endDate, place, driverID, vehicleID, reservationID)
+Values ('2022-2-10', '2022-2-15', "123 St Catherine", 2, 3, 4);
+INSERT INTO Mission(startDate, endDate, place, driverID, vehicleID, reservationID)
+Values ('2022-3-20', '2022-3-25', "244 St Constanste", 1, 4, 5);
+INSERT INTO Mission(startDate, endDate, place, driverID, vehicleID, reservationID)
+Values ('2022-3-10', '2022-3-15', "48 Newman", 5, 8, 7);
+INSERT INTO Mission(startDate, endDate, place, driverID, vehicleID, reservationID)
+Values ('2020-1-12', '2020-1-15', "110 Parnasse", 2, 3, 10);
+INSERT INTO Mission(startDate, endDate, place, driverID, vehicleID, reservationID)
+Values ('2022-3-5', '2022-3-14', "312 Tachereau", 4, 7, 4);
+INSERT INTO Mission(startDate, endDate, place, driverID, vehicleID, reservationID)
+Values ('2020-10-10', '2021-10-15', "354 St Catherine", 3, 7, 9);
+INSERT INTO Mission(startDate, endDate, place, driverID, vehicleID, reservationID)
+Values ('2022-12-12', '2021-12-17', "132 St Jacques", 6, 9, 8);
+INSERT INTO Mission(startDate, endDate, place, driverID, vehicleID, reservationID)
+Values ('2022-5-22', '2022-5-27', "6546 Wellington", 8, 5, 9);
+INSERT INTO Mission(startDate, endDate, place, driverID, vehicleID, reservationID)
+Values ('2022-8-13', '2022-8-20', "6453 Queen", 3, 3, 9);
+INSERT INTO Mission(startDate, endDate, place, driverID, vehicleID, reservationID)
+Values ('2022-9-21', '2022-9-28', "5334 Sherboroke", 5, 9, 9);
+
+-- SELECT * FROM Mission;
+
+INSERT INTO Bill(odometer, startDate, endDate, total, missionID, paymentType)
+Values (432, '2022-2-10', '2022-2-16', 1350.43, 1, Null);
+INSERT INTO Bill(odometer, startDate, endDate, total, missionID, paymentType)
+Values (54, '2022-3-20', '2022-3-25', 500, 2, "credit");
+INSERT INTO Bill(odometer, startDate, endDate, total, missionID, paymentType)
+Values (324, '2022-3-10', '2022-3-15', 233.34, 3, "cash");
+INSERT INTO Bill(odometer, startDate, endDate, total, missionID, paymentType)
+Values (221, '2020-1-12', '2020-1-15', 1230.32, 4, "check");
+INSERT INTO Bill(odometer, startDate, endDate, total, missionID, paymentType)
+Values (121, '2022-3-5', '2022-3-14', 321.42, 5, Null);
+INSERT INTO Bill(odometer, startDate, endDate, total, missionID, paymentType)
+Values (21, '2020-10-10', '2021-10-15', 213.43, 6, "check");
+INSERT INTO Bill(odometer, startDate, endDate, total, missionID, paymentType)
+Values (75, '2022-12-12', '2021-12-17', 700.43, 7, Null);
+INSERT INTO Bill(odometer, startDate, endDate, total, missionID, paymentType)
+Values (125, '2022-5-22', '2022-5-27', 240.23, 8, "credit");
+INSERT INTO Bill(odometer, startDate, endDate, total, missionID, paymentType)
+Values (123, '2022-8-13', '2022-8-20', 421.32, 9, "cash");
+INSERT INTO Bill(odometer, startDate, endDate, total, missionID, paymentType)
+Values (109, '2022-9-21', '2022-9-28', 0, 10, "credit");
+
+-- SELECT * FROM Bill;
+
+
+-- We have to verify if the driver can drive the vehicle type & mission start/end are in the mission range 
+-- & that car and driver are available for that date
+
