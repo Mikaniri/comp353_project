@@ -48,8 +48,8 @@ CREATE TABLE Mission(
     FOREIGN KEY (reservationID) REFERENCES Reservation(reservationID)
 );
 
-CREATE TABLE Bill(
-    billID int not Null PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE Invoice(
+    invoiceID int not Null PRIMARY KEY AUTO_INCREMENT,
     odometer int,
     startDate date,
     endDate date,
