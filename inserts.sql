@@ -98,7 +98,7 @@ Values ('2022-2-10', '2022-2-15', "123 St Catherine", 2, 3, 4);
 INSERT INTO Mission(startDate, endDate, place, driverID, vehicleID, reservationID)
 Values ('2022-3-20', '2022-3-25', "244 St Constanste", 1, 4, 5);
 INSERT INTO Mission(startDate, endDate, place, driverID, vehicleID, reservationID)
-Values ('2022-3-10', '2022-3-15', "48 Newman", 5, 8, 7);
+Values ('2022-3-11', '2022-3-15', "48 Newman", 5, 8, 7);
 INSERT INTO Mission(startDate, endDate, place, driverID, vehicleID, reservationID)
 Values ('2020-1-12', '2020-1-15', "110 Parnasse", 2, 3, 10);
 INSERT INTO Mission(startDate, endDate, place, driverID, vehicleID, reservationID)
@@ -106,7 +106,7 @@ Values ('2022-3-5', '2022-3-14', "312 Tachereau", 4, 7, 4);
 INSERT INTO Mission(startDate, endDate, place, driverID, vehicleID, reservationID)
 Values ('2020-10-10', '2021-10-15', "354 St Catherine", 3, 7, 9);
 INSERT INTO Mission(startDate, endDate, place, driverID, vehicleID, reservationID)
-Values ('2022-12-12', '2021-12-17', "132 St Jacques", 6, 9, 8);
+Values ('2022-12-12', '2022-12-17', "132 St Jacques", 6, 9, 8);
 INSERT INTO Mission(startDate, endDate, place, driverID, vehicleID, reservationID)
 Values ('2022-5-22', '2022-5-27', "6546 Wellington", 8, 5, 9);
 INSERT INTO Mission(startDate, endDate, place, driverID, vehicleID, reservationID)
@@ -117,11 +117,11 @@ Values ('2022-9-21', '2022-9-28', "5334 Sherboroke", 5, 9, 9);
 -- SELECT * FROM Mission;
 
 INSERT INTO Invoice(odometer, startDate, endDate, total, missionID, paymentType)
-Values (432, '2022-2-10', '2022-2-16', 1350.43, 1, Null);
+Values (8000, '2022-2-10', '2022-2-16', 1350.43, 1, Null);
 INSERT INTO Invoice(odometer, startDate, endDate, total, missionID, paymentType)
 Values (54, '2022-3-20', '2022-3-25', 500, 2, "credit");
 INSERT INTO Invoice(odometer, startDate, endDate, total, missionID, paymentType)
-Values (324, '2022-3-10', '2022-3-15', 233.34, 3, "cash");
+Values (456, '2022-3-11', '2022-3-15', 233.34, 3, "cash");
 INSERT INTO Invoice(odometer, startDate, endDate, total, missionID, paymentType)
 Values (221, '2020-1-12', '2020-1-15', 1230.32, 4, "check");
 INSERT INTO Invoice(odometer, startDate, endDate, total, missionID, paymentType)
@@ -139,7 +139,4 @@ Values (109, '2022-9-21', '2022-9-28', 0, 10, "credit");
 
 -- SELECT * FROM Invoice;
 
-
--- We have to verify if the driver can drive the vehicle type & mission start/end are in the mission range 
--- & that car and driver are available for that date
 
